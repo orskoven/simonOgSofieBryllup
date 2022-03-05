@@ -1,4 +1,4 @@
-<html lang="da">
+<html lang="da" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
 
 <style>
     html {
@@ -24,7 +24,6 @@
         justify-content: space-evenly;
         font-size: 200%;
         font-family: "Arial Rounded MT Bold";
-        position: ;
     }
     .navigator a{
         color: #e8e679;
@@ -37,6 +36,18 @@
     .navigator a.billeder {
         color: #1245ee;
     }
+.file{
+    text-align: center;
+    margin: 20% 30%;
+    padding: 5%;
+    background-color: rgba(122, 244, 255, 0.5);
+    font-family: "Arial Rounded MT Bold";
+    font-size: 150%;
+    color: white;
+}
+.file:hover{
+    color: blue;
+}
 
 
 
@@ -53,6 +64,17 @@
     <a href="oensker.html">Oenskeliste</a>
     <a class="billeder" href="billeder.html">Billeder</a>
     <a href="su.html">SU</a>
+</div>
+<div class="file">
+<input type="file"  accept="image/*" name="image" id="file" style="display: none;">
+<p><label for="file" style="cursor: pointer;">UPLOAD BILLEDE</label></p>
+    <p><img id="output" width="200" /></p>
 
+    <script>
+        var loadFile = function(event) {
+            var image = document.getElementById('output');
+            image.src = URL.createObjectURL(event.target.files[0]);
+        };
+    </script>
 </div>
 </html>
